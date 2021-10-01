@@ -1,0 +1,29 @@
+  {% load static %}
+
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <title>{{ page_title }}</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    {% include "navbar.html" %}
+
+    {% include "search.html" %}
+
+
+
+    <div class="container">
+        <h1>informasi kontak jualin</h1>
+    </div>
+
+
+
+    {% include "footer.html" %}
+  </body>
+  </html>

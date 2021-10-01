@@ -1,0 +1,84 @@
+{% load cart_template_tags %}
+
+
+<nav class="navbar navbar-dark py-0 bg-primary navbar-expand-lg py-md-0">
+    <div class="container">
+
+      <!-- Brand -->
+      <a style="font-size: 17px;" class="navbar-brand" href="/">
+        <i class="fa fa-home" aria-hidden="true"></i>
+          <small>Beranda</small>
+      </a>
+
+      <a style="font-size: 17px;" class="navbar-brand" href="/">
+        <i class="fa fa-tags" aria-hidden="true"></i>
+          <small>Promo UMKM</small>
+      </a>
+
+      <a style="font-size: 17px;" class="navbar-brand" href="/">
+        <i class="fas fa-store"></i>
+          <small>UMKM</small>
+      </a>
+
+      <a style="font-size: 17px;" class="navbar-brand" href="/">
+        <i class="fas fa-shopping-basket" aria-hidden="true"></i>
+          <small>Produk Terlaris</small>
+      </a>
+
+      <a style="font-size: 17px;" class="navbar-brand" href="{% url 'tentangjualin' %}">
+          <small>Tentang Jualin</small>
+      </a>
+
+      
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          {% comment %} <li class="nav-item active">
+            <a class="nav-link waves-effect" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/checkout">
+            Checkout</a>
+          </li> {% endcomment %}
+        </ul>
+
+        <!-- Right -->
+
+
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Informasi Kontak
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/send-feedback">Send Feedback</a>
+          <a class="dropdown-item" href="/send-contact">Contact US</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+</li>
+</ul>
+
+
+
+
+
+      </div>
+
+    </div>
+  </nav>
+
+
+  </div>
+</div>

@@ -1,0 +1,31 @@
+{% load static %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "" %}{% endblock %}
+
+{% block content %}
+
+{% include "navbar.html" %}
+
+{% include "search.html" %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+
+<h1 class="text-center">{% trans "Sign Out" %}</h1>
+
+<p class="text-center">{% trans 'Apakah Anda yakin ingin keluar?' %}</p>
+
+<form method="post" class="text-center" action="{% url 'account_logout' %}">
+  {% csrf_token %}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  {% endif %}
+  <button type="submit" class="btn btn-danger">{% trans 'Sign Out' %}</button>
+</form>
+
+
+{% endblock %}
+{% include "footer.html" %}

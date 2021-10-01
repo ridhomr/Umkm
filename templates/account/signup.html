@@ -1,0 +1,42 @@
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+
+{% include "navbar.html" %}
+
+{% include "search.html" %}
+  <main class="mt-0 pt-4">
+    <div class="container">
+      <section class="mb-4 mt-0 pt-0">
+        <div class="row wow fadeIn">
+          <div class='col-6 offset-3'>
+            <br>
+            <div class="text-center" style="font-size:25px"><b><strong>{% trans "Daftarkan diri anda segera!" %}</strong></b></div>
+            <a class="text-center" style="font-size:16px">{% blocktrans %}Untuk tujuan regulasi industri, detail data pribadi anda diperlukan.<a href="{{ login_url }}"> sign in</a>.{% endblocktrans %}</a><p>
+            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+              {% csrf_token %}
+              {{ form|crispy }}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <button class="btn btn-primary btn-lg w-100 shadow-lg" type="submit">{% trans "Sign Up" %} &raquo;</button><br><p>
+                <div class="text-center" style="font-size:12px" ><i class="fa fa-lock" aria-hidden="true"></i>
+                your info sofely secured.</p><br>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+{% endblock %}
+
+{% include "footer.html" %}
+{% include "scripts.html" %}

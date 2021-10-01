@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>LazyCoder || sumit</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+
+
+
+
+</head>
+
+
+
+  {%if request.user.is_authenticated%}
+
+  {%else%}
+    
+  {%endif%}
+
+
+
+
+
+
+  <center>
+    <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+
+
+    <form method="POST">
+      {% csrf_token %}
+    <ul class="form-style-1">
+        <li>
+            <label>Name <span class="required">*</span></label>
+            {% render_field contactForm.name class="field-long"%}
+
+        </li>
+        <li>
+            <label>Email <span class="required">*</span></label>
+            {% render_field contactForm.email class="field-long"%}
+
+        </li>
+        <li>
+            <label>Pesan <span class="required">*</span></label>
+            {% render_field contactForm.pesan id="field5" class="field-long field-textarea" %}
+
+        </li>
+        <input type="submit" value="Send Contact" />
+    </ul>
+    </form>
+
+
+  </center>
+  {% include "footer.html" %}
+</body>
+<!--
+developed By : sumit kumar
+facebook : fb.com/sumit.luv
+youtube : youtube.com/lazycoders
+-->
+
+</html>

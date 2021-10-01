@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+<main>
+
+  <div class="container">
+    <section class="text-center mb-4 mt-3">
+      <div class="row wow fadeIn">
+
+        {% for object in object_list %}
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <div class="view overlay">
+              <img src="{{object.image.url}}" class="card-img-top"
+                alt="">
+              <a href="{% url 'product' object.slug %}">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+            <div class="card-body text-center">
+              <a href="" class="grey-text">
+                <h5>{{object.get_category_display}}</h5>
+              </a>
+              <h5>
+                <strong>
+                  <a href="{% url 'product' object.slug %}" class="dark-grey-text">{{object.title}}
+                    <span class="badge badge-pill {{object.get_label_display}}-color">NEW</span>
+                  </a>
+                </strong>
+              </h5>
+              <h4 class="font-weight-bold blue-text">
+                {% if object.discount_price %}
+                <strong>${{object.discount_price}}</strong>
+                {% else %}
+                  <strong>${{object.price}}</strong>
+                {% endif %}
+              </h4>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <!--Section: Products v.3-->
+
+  </div>
+</main>
+
+
+
+{% endblock content %}
+
+  
+<script type="text/javascript" src="{% static 'js/extention/choices.js' %}"></script>
+  
